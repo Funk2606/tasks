@@ -25,7 +25,7 @@ export default class TaskList extends Component {
                         estimate_at={new Date()}
                         done_at={new Date()} />
                     <Task description={"apreesntar TCC"}
-                        estimate_at={new Date()}
+                        estimate_at={moment(new Date()).add(5, "days").format('DD/MM/YYYY')}
                         done_at={null} />
                         
                 </View>
