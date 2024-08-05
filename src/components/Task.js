@@ -5,6 +5,7 @@ import Icon from "react-native-vector-icons/FontAwesome6"
 
 export default props => {
     const done_or_not = props.done_at != null ? {textDecorationLine: "line-through"}:{} 
+    const date= props.done_at != null ? props.done_at : props.estimate_at
     return (
         <View style={styles.container}>
             <TouchableWithoutFeedback>
@@ -14,8 +15,7 @@ export default props => {
             </TouchableWithoutFeedback>
             <View>
                 <Text style={[styles.desc, done_or_not]}>{props.description}</Text>
-                <Text style={styles.date}>{props.estimate_at + ""}</Text>
-                <Text style={styles.date}>{props.done_at + ""}</Text>
+                <Text style={styles.date}>{formated_date}</Text>
             </View>
         </View>
     )
